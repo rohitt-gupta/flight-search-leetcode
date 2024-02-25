@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flight Search</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script type="module" src="script.js"></script>
+		<style>
+			input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Optional: Hide the spinner in Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        /* Optional: Disable pointer events */
+        input[type="number"]:disabled {
+            pointer-events: none;
+        }
+		/* Styling for WebKit-based browsers */
+		::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #2D2D2D; /* Color of the track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #555; /* Color of the scrollbar thumb */
+        border-radius: 6px; /* Rounded corners of the thumb */
+        border: 3px solid #2D2D2D; /* Creates padding around the thumb */
+    }
+
+    /* Styling for Firefox */
+    * {
+        scrollbar-width: thin; /* "auto" or "thin" */
+        scrollbar-color: #555 #2D2D2D; /* thumb and track color */
+    }
+		</style>
+	</head>
+	<body class="bg-[#171717] text-zinc-100 flex items-center justify-center flex-col">
+		<header class="h-full bg-zinc-400 w-full text-center">
+			<h1 class="uppercase font-bold text-7xl text-zinc-700 p-3">Search Flights</h1>
+		</header>
+		<section class="w-full sm:w-auto px-8">
+			<form  class="w-full sm:w-auto flex flex-col md:flex-row items-center justify-center gap-7 mt-5" id="flightSearchForm">
+				<div class="relative w-full sm:w-full">
+					<label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Source</label>
+					<input  name="source" id="sourceInput" type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Delhi" required />
+				</div>
+				<div class="relative w-full sm:w-full">
+					<label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Destination</label>
+					<input name="destination" id="destinationInput" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mumbai" required />
+				</div>
+				<div class="relative w-full sm:w-full">
+					<label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Max Number of stops</label>
+					<input name="stops" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="2 stops" required />
+				</div>
+				<div class="mt-auto w-full sm:w-full">
+					<button  type="submit"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+				</div>
+			</form>
+		</section>
+		
+		<section class="w-full sm:w-auto m-4 mt-8 px-8">
+			<div id="result"></div>
+		</section>
+		
+		<script type="module" src="script.js"></script>
+	</body>
+</html>
